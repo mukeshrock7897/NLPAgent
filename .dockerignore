@@ -1,0 +1,15 @@
+.git
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+.env.*
+.idea/
+.vscode/
+.DS_Store
+data/
+.chroma/
+*.sqlite
+*.db

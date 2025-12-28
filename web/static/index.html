@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>NLPAGENT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/static/assets/style.css" rel="stylesheet">
+</head>
+<body class="bg-app">
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">NLPAGENT</div>
+      <div class="brand-sub">Agentic NLP workspace with MCP tools and human approval.</div>
+    </div>
+
+    <div class="status-card">
+      <div class="status-row">
+        <span class="status-label">Server</span>
+        <span id="server-pill" class="pill pill-warn">connecting</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Tools</span>
+        <span id="tools-pill" class="pill pill-warn">0 loaded</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">OpenAI</span>
+        <span id="openai-pill" class="pill pill-warn">not set</span>
+      </div>
+    </div>
+
+    <button id="new-chat" class="btn btn-primary">New chat</button>
+
+    <div class="section-title">Chats</div>
+    <div id="chat-list" class="chat-list"></div>
+  </aside>
+
+  <main class="main">
+    <header class="main-header">
+      <div>
+        <div class="main-label">Conversation</div>
+        <div id="chat-title" class="main-title">Chat</div>
+      </div>
+      <div class="header-actions">
+        <button id="scroll-btn" class="btn btn-ghost">Jump to latest</button>
+        <button id="logout-btn" class="btn btn-ghost">Log out</button>
+      </div>
+    </header>
+
+    <section class="doc-panel">
+      <div class="doc-info">
+        <div class="doc-title">Document</div>
+        <div id="upload-label" class="doc-value">No file uploaded yet.</div>
+        <div class="doc-meta">Upload a PDF to index it and enable RAG answers.</div>
+      </div>
+      <div class="doc-actions">
+        <button id="attach-btn" class="btn btn-ghost">Upload PDF</button>
+        <button id="run-pipeline" class="btn btn-accent" disabled>Run pipeline</button>
+      </div>
+    </section>
+
+    <section id="messages" class="messages"></section>
+
+    <div class="composer">
+      <div class="composer-row">
+        <input id="message-input" class="msg-input" placeholder="Ask NLPAGENT something useful..." autocomplete="off" />
+        <button id="send-btn" class="btn btn-primary">Send</button>
+      </div>
+      <div class="composer-meta">
+        <div id="footer-hint" class="footer-hint"></div>
+        <div class="composer-tip">Tip: upload a PDF, then run the pipeline.</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<input id="file-input" type="file" accept=".pdf" hidden />
+<script src="/static/assets/app.js"></script>
+</body>
+</html>

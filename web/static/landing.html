@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>NLPAGENT Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/static/assets/auth.css" rel="stylesheet">
+</head>
+<body class="bg-auth">
+  <main class="auth-shell">
+    <div class="auth-layout">
+      <section class="auth-hero">
+        <div class="brand">
+          <div class="brand-logo">N</div>
+          <div>
+            <div class="brand-name">NLPAGENT</div>
+            <div class="brand-tag">Secure access to your AI workspace</div>
+          </div>
+        </div>
+        <h1>AI Agents WorkSpace</h1>
+        <p class="hero-copy">
+          Manage your document intelligence, pipelines, and chat history in one place.
+          Sign in to continue or create a new account in seconds.
+        </p>
+        <div class="hero-badges">
+          <span>Fast onboarding</span>
+          <span>Private sessions</span>
+          <span>Document RAG</span>
+        </div>
+        <div class="hero-social">
+          <a class="social-link" href="https://www.facebook.com" target="_blank" rel="noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="Facebook" />
+            <span>Facebook</span>
+          </a>
+          <a class="social-link" href="https://www.whatsapp.com" target="_blank" rel="noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" />
+            <span>WhatsApp</span>
+          </a>
+          <a class="social-link" href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" />
+            <span>Instagram</span>
+          </a>
+          <a class="social-link" href="https://x.com" target="_blank" rel="noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/x.svg" alt="X" />
+            <span>X</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Login</button>
+          <button class="auth-tab" data-tab="signup">Sign up</button>
+          <button class="auth-tab" data-tab="forgot">Forgot</button>
+          <button id="tab-reset" class="auth-tab" data-tab="reset" hidden>Reset</button>
+        </div>
+
+        <div id="auth-notice" class="auth-notice" aria-live="polite"></div>
+
+        <form id="login-form" class="auth-panel active">
+          <label>
+            <span>User Name</span>
+            <input name="identifier" type="text" autocomplete="username" placeholder="Username or email" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input name="password" type="password" autocomplete="current-password" placeholder="Enter password" required />
+          </label>
+          <div class="auth-row">
+            <label class="auth-check">
+              <input type="checkbox" name="remember" />
+              <span>Remember me</span>
+            </label>
+            <button class="auth-link" type="button" data-tab-target="forgot">Forgot password?</button>
+          </div>
+          <button class="auth-submit" type="submit">Login</button>
+        </form>
+
+        <form id="signup-form" class="auth-panel">
+          <label>
+            <span>User Name</span>
+            <input name="username" type="text" autocomplete="username" placeholder="Choose a username" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" placeholder="name@email.com" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input name="password" type="password" autocomplete="new-password" placeholder="Create password" required />
+          </label>
+          <label>
+            <span>Confirm Password</span>
+            <input name="confirm" type="password" autocomplete="new-password" placeholder="Confirm password" required />
+          </label>
+          <label class="auth-check">
+            <input type="checkbox" name="remember" />
+            <span>Keep me signed in</span>
+          </label>
+          <button class="auth-submit" type="submit">Create Account</button>
+        </form>
+
+        <form id="forgot-form" class="auth-panel">
+          <label>
+            <span>Email Address</span>
+            <input name="email" type="email" autocomplete="email" placeholder="Enter your email" required />
+          </label>
+          <button class="auth-submit" type="submit">Send Reset Link</button>
+          <button class="auth-link" type="button" data-tab-target="login">Back to login</button>
+        </form>
+
+        <form id="reset-form" class="auth-panel">
+          <label>
+            <span>Reset Token</span>
+            <input id="reset-token" name="token" type="text" autocomplete="off" placeholder="Paste reset token" required />
+          </label>
+          <label>
+            <span>New Password</span>
+            <input name="password" type="password" autocomplete="new-password" placeholder="Enter new password" required />
+          </label>
+          <button class="auth-submit" type="submit">Update Password</button>
+          <button class="auth-link" type="button" data-tab-target="login">Back to login</button>
+        </form>
+
+        <div class="auth-footer">
+          <div>Need help? support@nlpagent.app</div>
+          <div>© 2025 NLPAGENT</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/static/assets/auth.js"></script>
+</body>
+</html>

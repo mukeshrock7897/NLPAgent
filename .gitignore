@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+
+# Environment variables (Sensitive!)
+.env
+
+# App Specific
+data/uploads/
+*.db
+artifacts/
+
+# OS Specific
+.DS_Store

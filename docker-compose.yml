@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  mcp:
+    build: .
+    command: ["python", "server/server.py"]
+    environment:
+      NLPAGENT_MCP_HOST: 0.0.0.0
+      NLPAGENT_MCP_PORT: 8000
+      CHROMA_DIR: /app/data/chroma
+      HF_HOME: /app/data/hf_cache
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+    volumes:
+      - nlpagent_data:/app/data
+    ports:
+      - "8000:8000"
+
+  web:
+    build: .
+    command: ["uvicorn", "web.app:app", "--host", "0.0.0.0", "--port", "8502"]
+    environment:
+      NLPAGENT_MCP_URL: http://mcp:8000/mcp
+      NLPAGENT_DB_PATH: /app/data/nlpagent.db
+      CHROMA_DIR: /app/data/chroma
+      HF_HOME: /app/data/hf_cache
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+    volumes:
+      - nlpagent_data:/app/data
+    ports:
+      - "8502:8502"
+    depends_on:
+      - mcp
+
+volumes:
+  nlpagent_data:
