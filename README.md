@@ -1,5 +1,5 @@
 # NLPAGENT — OpenAI Brain + MCP Tools + Human Approval 
-## Developer -> Mukesh Yadav Bengaluru
+## Developer : Mukesh Yadav Bengaluru
 
 ![alt text](image.png)
 ### NLPAGENT is a runnable reference implementation of your **Agentic NLP Ecosystem** with:
