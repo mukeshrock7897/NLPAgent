@@ -1,4 +1,4 @@
-# NLPAGENT — OpenAI Brain + MCP Tools + Human Approval (ChatGPT-like UI)
+# NLPAGENT — OpenAI Brain + MCP Tools + Human Approval 
 ## Developer -> Mukesh Yadav Bengaluru
 
 ![alt text](image.png)
